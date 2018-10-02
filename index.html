@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" 
+         content="default-src *; 
+                  style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
+                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>World in English</title>
+  </head>
+  <body style="margin: 0px; padding: 0px;">
+
+	<p style="margin: 0px; padding: 0px; width: 100%; text-align: center">
+	<img src="wieimagem.png" />
+	<br />
+	<a style="border: none; background: #711282; border-radius: 30px; padding: 8px 30px; color: #fff; font-size: 14px; transition: all 0.3s;" href="http://www.worldinenglish.com.br/">Entrar</a>
+	</p>
+  	
+  	<script type="text/javascript">
+	  	
+		// Add to index.js or the first page that loads with your app.
+		// For Intel XDK and please add this to your app.js.
+		
+		document.addEventListener('deviceready', function () {
+		  // Enable to debug issues.
+		  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+		  
+		  var notificationOpenedCallback = function(jsonData) {
+		    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+		  };
+		
+		  window.plugins.OneSignal
+		    .startInit("a3e3c3a0-98e9-4905-af84-6d616a3d8c70")
+		    .handleNotificationOpened(notificationOpenedCallback)
+		    .endInit();
+		}, false);	  
+		    	
+  	</script>
+  	
+  	<script type="text/javascript" src="phonegap.js"></script>
+  	
+  </body>
+</html>
